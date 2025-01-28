@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d066xebii1cmy" path="res://Resources/Aseprite/player-Sheet.png" id="1_3gmno"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pobw1"]
-radius = 8.0
+radius = 7.9
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5kg8u"]
 atlas = ExtResource("1_3gmno")

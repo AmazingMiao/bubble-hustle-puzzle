@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://bh3wa2gv4ry8v"]
+[gd_scene load_steps=9 format=4 uid="uid://bh3wa2gv4ry8v"]
 
 [ext_resource type="Texture2D" uid="uid://ctbd4jv6qhawa" path="res://Resources/Aseprite/blocks_tileset.png" id="1_a4ti5"]
 [ext_resource type="PackedScene" uid="uid://42swipc362s" path="res://Scenes/player.tscn" id="2_mv4vq"]
@@ -31,6 +31,24 @@ texture = ExtResource("1_a4ti5")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vr3ky")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4nla"]
+atlas = ExtResource("1_a4ti5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plb5g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4nla")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57jc2"]
+size = Vector2(15.8, 15.8)
+
 [node name="Level_Test" type="Node2D"]
 
 [node name="Block" type="TileMapLayer" parent="."]
@@ -41,7 +59,22 @@ tile_set = SubResource("TileSet_iybhq")
 
 [node name="Player" parent="." instance=ExtResource("2_mv4vq")]
 position = Vector2(0, -16)
+collision_layer = 3
+collision_mask = 3
 gravity_scale = 0.0
 lock_rotation = true
 freeze_mode = 1
 script = ExtResource("3_i46j4")
+
+[node name="Box" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+gravity_scale = 0.0
+lock_rotation = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Box"]
+sprite_frames = SubResource("SpriteFrames_plb5g")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_57jc2")
