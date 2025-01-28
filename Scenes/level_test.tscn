@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh3wa2gv4ry8v"]
+[gd_scene load_steps=6 format=4 uid="uid://bh3wa2gv4ry8v"]
 
 [ext_resource type="Texture2D" uid="uid://ctbd4jv6qhawa" path="res://Resources/Aseprite/blocks_tileset.png" id="1_a4ti5"]
 [ext_resource type="PackedScene" uid="uid://42swipc362s" path="res://Scenes/player.tscn" id="2_mv4vq"]
@@ -33,12 +33,11 @@ sources/0 = SubResource("TileSetAtlasSource_vr3ky")
 
 [node name="Level_Test" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Block" type="TileMapLayer" parent="."]
+use_parent_material = true
 position = Vector2(8, 8)
+tile_map_data = PackedByteArray("AAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAD8////AAAAAAAAAAD8//7/AAAAAAAAAAD8//3/AAAAAAAAAAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAD///z/AAAAAAAAAAAAAPz/AAAAAAAAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_iybhq")
-format = 2
-layer_0/name = "block"
-layer_0/tile_data = PackedInt32Array(65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, -4, 0, 0, -65540, 0, 0, -131076, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_mv4vq")]
 position = Vector2(0, -16)
