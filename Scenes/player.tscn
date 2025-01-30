@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjnmlmyqjd171"]
 
-[ext_resource type="Texture2D" uid="uid://d066xebii1cmy" path="res://Resources/Aseprite/player-Sheet.png" id="1_3x1wy"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_ua3hf"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_5v6w5"]
+[ext_resource type="Texture2D" uid="uid://d066xebii1cmy" path="res://resources/aseprite/player-Sheet.png" id="2_acaaw"]
 
 [node name="Player" type="Node2D"]
 z_index = 2
-script = ExtResource("1_ua3hf")
+script = ExtResource("1_5v6w5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3x1wy")
+texture = ExtResource("2_acaaw")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
