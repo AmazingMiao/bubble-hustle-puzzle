@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bto7mam2s6mi7"]
 
-[ext_resource type="Script" path="res://scripts/crate.gd" id="1_ceibc"]
-[ext_resource type="Texture2D" uid="uid://ctbd4jv6qhawa" path="res://Resources/Aseprite/blocks_tileset.png" id="1_nfqm4"]
+[ext_resource type="Script" path="res://scripts/crate.gd" id="1_xq7va"]
+[ext_resource type="Texture2D" uid="uid://ctbd4jv6qhawa" path="res://resources/aseprite/blocks_tileset.png" id="2_83242"]
 
 [sub_resource type="Animation" id="Animation_pxgt6"]
 length = 0.001
@@ -56,10 +56,10 @@ _data = {
 }
 
 [node name="Crate" type="Node2D" groups=["crates"]]
-script = ExtResource("1_ceibc")
+script = ExtResource("1_xq7va")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_nfqm4")
+texture = ExtResource("2_83242")
 region_enabled = true
 region_rect = Rect2(0, 16, 16, 16)
 

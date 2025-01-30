@@ -1,0 +1,34 @@
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://c5kmmlfqc0ini"]
+
+[ext_resource type="Texture2D" uid="uid://ctbd4jv6qhawa" path="res://Resources/Aseprite/blocks_tileset.png" id="1_jebta"]
+[ext_resource type="PackedScene" uid="uid://c6xvx5mmx7ejo" path="res://Scenes/crate.tscn" id="2_i0dks"]
+[ext_resource type="PackedScene" uid="uid://bjnmlmyqjd171" path="res://Scenes/player.tscn" id="3_s1lkj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjtfc"]
+texture = ExtResource("1_jebta")
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+7:0/0/z_index = 1
+7:0/0/custom_data_1 = true
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_owwic"]
+scenes/1/scene = ExtResource("2_i0dks")
+scenes/2/scene = ExtResource("3_s1lkj")
+
+[resource]
+custom_data_layer_0/name = "is_wall"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "is_dest"
+custom_data_layer_1/type = 1
+sources/0 = SubResource("TileSetAtlasSource_jjtfc")
+sources/1 = SubResource("TileSetScenesCollectionSource_owwic")
