@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://bto7mam2s6mi7"]
+
+[ext_resource type="Script" path="res://scripts/crate.gd" id="1_ceibc"]
+[ext_resource type="Texture2D" uid="uid://ctbd4jv6qhawa" path="res://Resources/Aseprite/blocks_tileset.png" id="1_nfqm4"]
+
+[sub_resource type="Animation" id="Animation_pxgt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 16, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_rmw4r"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 16, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_crl77"]
+resource_name = "reached"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 32, 16, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j0hng"]
+_data = {
+"RESET": SubResource("Animation_pxgt6"),
+"default": SubResource("Animation_rmw4r"),
+"reached": SubResource("Animation_crl77")
+}
+
+[node name="Crate" type="Node2D" groups=["crates"]]
+script = ExtResource("1_ceibc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nfqm4")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j0hng")
+}
