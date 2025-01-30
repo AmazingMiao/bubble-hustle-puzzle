@@ -1,7 +1,7 @@
 extends "res://scripts/game_object.gd"
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#检测有动画播放时return
 	if tween and tween.is_running():
 		return
